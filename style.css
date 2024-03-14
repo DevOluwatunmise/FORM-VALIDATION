@@ -55,3 +55,43 @@ input {
 /* this input will not be visible, becsuse we want it toshow 
 red when the input or fill info are not correct(border to show red) */
 
+input:valid {
+    border: 1px solid green;
+}
+
+input:invalid {
+    border: 1.5px solid red;
+}
+
+button {
+    cursor: pointer;
+    color: white;
+    background-color:black ;
+    border: none;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 5px;
+    letter-spacing:2px ;
+}
+
+button:hover {
+    filter: brightness(200%);
+    background: rgb(22, 22, 22);
+}
+
+button:focus {
+    outline: none;
+}
+
+.message-container{
+    border:1px solid black;
+    border-radius: 5px;
+    width:90%;
+    margin:20px;
+    display:flex;
+    justify-content: center;
+    color: black; 
+}
