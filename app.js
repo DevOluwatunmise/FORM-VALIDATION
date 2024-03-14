@@ -1,6 +1,6 @@
 const form = document.getElementById('form');
 
-const password1El = document.getElementById('password');
+const password1El = document.getElementById('password1');
 
 const password2El = document.getElementById('password2');
 
@@ -11,6 +11,7 @@ const message = document.getElementById('message');
 
 
 let isValid = false
+let passwordMatch = false
 
 const validateForm = () => {
     isValid = form.checkVisibility()        // to
@@ -27,11 +28,11 @@ const validateForm = () => {
 
     if(password1El.value === password2El.value) {
         passwordMatch = true;
-        password1El.style.borderColor = "green";
-        password2El.style.borderColor = "green"
+        password1El.style.borderColor = "green !important";
+        password2El.style.borderColor = "green !important"
     }else{
         passwordMatch = false;
-        message.te = "Make sure password match.";
+        message.textContent = "Make sure password match.";
         message.style.color = "red";
         messageContainer.style.borderColor = "red";
         password1El.style.borderColor = "red";
@@ -45,8 +46,6 @@ const validateForm = () => {
         messageContainer.style.borderColor = "green";
     }
         
-    
-
 
 }
 
@@ -55,23 +54,24 @@ const storeFormData = () => {
         name:   form.name.value,
         phone:  form.phone.value,
         email:  form.email.value,
-        website:    form.website.value,
-        password:   form.password.value
+        website: form.website.value,
+        password: form.password.value
     };
 
-    console.log(user)
+    console.log(user);
 }
 
-const processFormData =(event) => {
-    event.preventDefault();             // to prevent the page from reloading, we use preventDefault to the event
-    // console.log(event)
+const processFormData =(e) => {
+    e.preventDefault();             // to prevent the page from reloading, we use preventDefault to the event
+    // console.log(e)
 
 
     validateForm();
 
     // submit data if valid
     if(isValid && passwordMatch) {
-        storeFormData()
+        storeFormData();
+        form.reset();   //by putting this function, the inpute will be clean out and bring new empty form.
     }
 }
 
