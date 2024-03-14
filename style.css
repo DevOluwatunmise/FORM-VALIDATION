@@ -29,7 +29,7 @@ body{
 /* Form */
 
 form {
-    /* width: 90%; */
+    width: 90%;
 }
 
 .form-group {
@@ -48,5 +48,10 @@ input {
     border: 1px solid black;
     border-radius: 5px;
     outline: none;
-    box-sizing: border-boxh;
+    box-sizing: border-box;
+    transition: all 0.3s;
 }
+
+/* this input will not be visible, becsuse we want it toshow 
+red when the input or fill info are not correct(border to show red) */
+
